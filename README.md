@@ -41,4 +41,4 @@ Transfer funds to another bank user
  Can close the account
  -- If you close an account, you can will have to perform a hard reset on your browser to get the account back
  
-
+Source for Project Idea: [Jonas Schmedtmann's JavaScript MasterCourse](https://www.udemy.com/course/the-complete-javascript-course)

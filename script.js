@@ -290,7 +290,12 @@ function resetUI() {
   formLogin.style.visibility = 'visible';
   btnLogout.style.visibility = 'hidden';
   containerApp.style.opacity = 0;
-  labelWelcome.textContent = `Log in to get started`;
+  labelWelcome.innerHTML = `Log in to get started. Go to <a
+          href="https://github.com/romeojeremiah/Bankist_App/blob/main/README.md"
+          target="_blank"
+          >README.md</a
+        >
+        for Account Login Options.`;
 }
 
 //////////////////////////////////////////////////////////// Operational Functions

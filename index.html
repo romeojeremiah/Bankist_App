@@ -17,7 +17,15 @@
   <body>
     <!-- TOP NAVIGATION -->
     <nav>
-      <p class="welcome">Log in to get started. <a href="https://github.com/romeojeremiah/Bankist_App/blob/main/README.md" target="_blank">README.md</a> for Help</p>
+      <p class="welcome">
+        Log in to get started.
+        <a
+          href="https://github.com/romeojeremiah/Bankist_App/blob/main/README.md"
+          target="_blank"
+          >README.md</a
+        >
+        for Help
+      </p>
       <img src="logo.png" alt="Logo" class="logo" />
       <h1 class="title">Bankist JavaScript App</h1>
       <form class="login">
@@ -37,6 +45,7 @@
       </form>
       <button class="logout__btn">Logout</button>
     </nav>
+
     <main class="app">
       <!-- BALANCE -->
       <div class="balance">
@@ -75,7 +84,12 @@
       <div class="operation operation--transfer">
         <h2>Transfer money</h2>
         <form class="form form--transfer">
-          <input type="text" class="form__input form__input--to" />
+          <select type="text" class="form__input form__input--to">
+            <option value="jonas">Jonas</option>
+            <option value="jessica">Jessica</option>
+            <option value="steven">Steven</option>
+            <option value="susan">Susan</option>
+          </select>
           <input type="number" class="form__input form__input--amount" />
           <button class="form__btn form__btn--transfer">&rarr;</button>
           <label class="form__label">Transfer to</label>

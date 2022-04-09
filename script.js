@@ -177,7 +177,8 @@ btnTransfer.addEventListener('click', function (e) {
   );
   if (
     transferAccount !== undefined &&
-    activeAccount.totalBalance >= transferAmount
+    activeAccount.totalBalance >= transferAmount &&
+    activeAccount.userName !== transferTo
   ) {
     activeAccount.movements.push(-transferAmount);
     activeAccount.movementsDates.push(new Date().toISOString());
@@ -185,6 +186,9 @@ btnTransfer.addEventListener('click', function (e) {
     transferAccount.movementsDates.push(new Date().toISOString());
     inputTransferTo.value = inputTransferAmount.value = '';
     displayUI(activeAccount);
+  } else if (activeAccount.userName === transferTo) {
+    alert(`Sorry, you can not make deposits to yourself. Please try again.`);
+    inputTransferTo.value = inputTransferAmount.value = '';
   } else if (activeAccount.totalBalance <= transferAmount) {
     const balance = formatCurrency(
       activeAccount.totalBalance,
@@ -196,10 +200,12 @@ btnTransfer.addEventListener('click', function (e) {
       Your current balance is ${balance}, which is the most you'd be allowed to transfer.\n
       Please transfer a smaller amount.`
     );
+    inputTransferTo.value = inputTransferAmount.value = '';
   } else {
     alert(
       `Sorry, that account either does not exist or\nyou do not have permissions to transfer to that account`
     );
+    inputTransferTo.value = inputTransferAmount.value = '';
   }
 });
 
